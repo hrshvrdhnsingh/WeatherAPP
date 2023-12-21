@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link href="styles.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+</head>
+<body style="font-family:Verdana;">
+    <div class="wrapper">
+        <h1 style="font-family: Lucida Sans;">WEATHER APP</h1>
+        <div class="tab-container">
+            <p class="tab" data-userWeather>Your Weather</p>
+            <p class="tab" data-searchWeather>Search Weather</p>
+        </div>
+        <div class="card-wrapper">
+            <!-----------------------------------Location Access Request-------------------------->
+            <div class="grant-location-container">
+                <img src="./images/location.png" loading="lazy">
+                <p>Grant Location Access</p>
+                <p>Allow access to get weather information</p>
+                <button class="btn-grant" data-grantAccess>Grant Access</button>
+            </div>
+            <!----------------------------------Search Bar for City------------------------------->
+            <form class="form-container" data-searchForm>
+                <input  placeholder="Search for City..." data-searchInput id="inputarea">
+                <button class="btn" type="submit">
+                    <i class="fa-solid fa-magnifying-glass" loading="lazy"></i>
+                </button> 
+            </form>
+            <!-----------------------------------------Loading Screen Conatiner-------------------->
+            <div class="loading-container">
+                <img src="./images/loading.gif">
+                <p>Loading...</p>
+            </div> 
+            <!------Weather Info---------------------->
+            <div class="user-info-container">
+                <div class="row1">
+                    <!--Day, place, temperature, high, low-->
+                    <div class="item1 row1child" >
+                        <p data-dayName></p>
+                        <div class="initial">
+                            <p data-cityName class="discity"></p>
+                            <p data-countryName class="country"></p>
+                        </div>
+                        <div class="middle"><h2 data-temp class="tempval"></h2></div>
+                        <div class="bottom">
+                            <p data-high class="maxtemp"></p>
+                            <p data-low class="mintemp"></p>
+                        </div>
+                    </div>
+                    <!--type of weather with symbol-->
+                    <div class="item2 row1child" >
+                        <div class="initial2"><p data-weatherDesc class="description"></p></div>
+                        <div class="middle2"><img data-weatherIcon class="iconw"></div>
+                        <div class="bottom2"><p data-feelsLike class="feellike"></p></div>
+                    </div>
+                </div>
+                <div class="row2">
+                    <!--For humidity, windspeed and cloudiness-->
+                    <div class="item3 row2child">
+                        <i class="fa-solid fa-wind icon"></i>
+                        <p>WINDSPEED</p>
+                        <p data-windspeed></p>
+                    </div>
+                    <div class="item4 row2child">
+                        <img src="./images/humidity.png">
+                        <p>HUMIDITY</p>
+                        <p data-humidity></p>
+                    </div>
+                    <div class="item5 row2child">
+                        <i class="fa-solid fa-cloud icon"></i>
+                        <p>CLOUDS</p>
+                        <p data-cloudy></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="index.js"></script>
+    <script src="https://kit.fontawesome.com/58a810656e.js"></script>
+</body>
+</html>
